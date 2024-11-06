@@ -1,0 +1,107 @@
+  /**
+     * @OA\Post(
+     *     path="/api/file/upload",
+     *     operationId="uploadFile",
+     *     tags={"File"},
+     *     summary="Upload new file",
+     *     description="Uploads new file to directory and return path for DB",
+     *     @OA\RequestBody(
+     *         required=true,
+     *         @OA\MediaType(
+     *             mediaType="multipart/form-data",
+     *             @OA\Schema(
+     *                 type="object",
+     *      *          required={"file"},
+     *                 @OA\Property(property="file", type="string", format="binary")
+     *             )
+     *         )
+     *     ),
+     *     @OA\Response(
+     *         response=200,
+     *         description="Successful operation",
+     *     ),
+     *     @OA\Response(
+     *         response=400,
+     *         description="Bad request",
+     *     ),
+     * )
+     */
+
+
+      /**
+     * @OA\Delete(
+     *     path="/api/file/delete",
+     *     operationId="deleteFile",
+     *     tags={"File"},
+     *     summary="Delete",
+     *     description="delete file from directory and database",
+     * @OA\RequestBody(
+     *         required=true,
+     *         @OA\JsonContent(
+     *             required={"path"},
+     *             @OA\Property(property="path", type="string", format="string", example="0000/file.png")
+     *         )
+     *     ),
+     *      @OA\Response(
+     *         response=200,
+     *         description="successful operation",
+     *
+     *     ),
+     *
+     * )
+     */
+
+     /**
+     * @OA\Get(
+     *     path="/api/user/user/{id}",
+     *     operationId="getUserById",
+     *     tags={"Users"},
+     *     summary="Get user information",
+     *     description="Returns user data",
+     *     security={{"sanctum":{}}},
+     *     @OA\Parameter(
+     *         name="id",
+     *         in="path",
+     *         required=true,
+     *         @OA\Schema(
+     *             type="integer"
+     *         )
+     *     ),
+     *     @OA\Response(
+     *         response=200,
+     *         description="Successful operation",
+     *     ),
+     *     @OA\Response(
+     *         response=404,
+     *         description="User not found"
+     *     )
+     * )
+     */
+
+
+     /**
+     * @OA\Put(
+     *     path="/api/user/update/{id}",
+     *     operationId="getUserById",
+     *     tags={"Users"},
+     *     summary="Update user information",
+     *     description="Returns user data",
+     *     security={{"sanctum":{}}},
+     *     @OA\Parameter(
+     *         name="id",
+     *         in="path",
+     *         required=true,
+     *         @OA\Schema(
+     *             type="integer"
+     *         )
+     *     ),
+     *     @OA\Response(
+     *         response=200,
+     *         description="Successful operation",
+     *     ),
+     *     @OA\Response(
+     *         response=404,
+     *         description="User not found"
+     *     )
+     * )
+     */
